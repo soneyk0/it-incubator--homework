@@ -1,18 +1,29 @@
 import React from "react";
 import exp from "constants";
-
-function Akord() {
-    console.log('Akord rendered')
-    return (
-        <div>
-            <AccordionTitle title={props.title}/>
-            <AccordionBody title={props.title}/>
-        </div>)
-
+type AkordPropsType={
+    titleValue: string
+    collapsed: boolean
 }
-function AccordionTitle(){
+function Akord(props: AkordPropsType) {
+    console.log('Akord rendered')
+    if (props.collapsed === true){
+        return <AccordionTitle title={props.titleValue}/>
+    }
+    else {
+        return (
+            <div>
+                <AccordionTitle title={props.titleValue}/>
+                <AccordionBody/>
+            </div>)
+    }
+}
+type AccordionTitlePropsType={
+    title: string
+}
+function AccordionTitle(props: AccordionTitlePropsType){
+
     console.log('AccordionTitle rendered')
-    return <h3>Меню</h3>
+    return <h3>--- {props.title} ---</h3>
 }
 function AccordionBody(){
     console.log('AccordionBody rendered')

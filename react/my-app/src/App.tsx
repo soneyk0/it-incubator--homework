@@ -20,21 +20,25 @@ function App() {
         <div>
             <input/>
             <input type="date"/>
-            <AppTitle value={'This is APP component'}/>
-            <AppTitle value={'My friends'}/>
+            <AppTitle title={"This is APP component"}/>
+            <AppTitle title={"My friends"}/>
             Article 1
             <Rating value={3}/>
-            <Akord/>
+            <Akord titleValue={"Меню"} collapsed={true}/>
+            <Akord titleValue={"User"} collapsed={false}/>
             Article 2
-            <Rating value={4}/>
+            <Rating value={1}/>
             <Rating value={0}/>
             <Rating value={5}/>
         </div>
     );
 }
 
-function AppTitle(props: any) {
-    debugger
+type AppTitlePropsType={
+    title: string
+}
+function AppTitle(props: AppTitlePropsType) {
+
     console.log('AppTitle rendered')
     return <h1>{ props.title }</h1>
 }
