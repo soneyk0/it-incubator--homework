@@ -1,19 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import exp from "constants";
 
 type AkordPropsType = {
     titleValue: string
-    collapsed: boolean
+    // collapsed: boolean
 }
 
-function Akord(props: AkordPropsType) {
+function UncontrolAkord(props: AkordPropsType) {
     console.log('Akord rendered')
 
+    let [collapsed, setCollapsed] = useState(false);
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
-            {!props.collapsed  && <AccordionBody/>}
+            <AccordionTitle title={props.titleValue}/> <button onClick={()=>{setCollapsed(!collapsed)}} >TOGGLE</button>
+
+            {!collapsed  && <AccordionBody/>}
         </div>)
 
 }
@@ -42,4 +44,4 @@ function AccordionBody() {
     )
 }
 
-export default Akord;
+export default UncontrolAkord;
