@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Akord from "./components/Akord/Accordion";
-import {Rating} from './components/Rating/Rating'
+import {Rating, RatingValueType} from './components/Rating/Rating'
 import OnOff from "./components/OnOff/OnOff";
 import PropTypes from "prop-types";
 import {isBooleanObject} from "util/types";
@@ -19,8 +19,8 @@ hello();
 
 function App() {
 
-    // полезное что то
-    console.log('App rendered')
+    let [ratingValue, setRatingValue]=useState<RatingValueType>(0)
+    let [acordCollapsed, setAcordCollapsed]=useState<boolean>(false)
     return (
         // обязана вернуть JSX
         <div className={'App'}>
@@ -29,9 +29,13 @@ function App() {
             <UncontrolAkord titleValue={"Меню"}/>
             <UncontrolRating/>
 
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+
             {/*<OnOff on={true}/>*/}
             {/*<OnOff on={false}/>*/}
-            {/*<Akord titleValue={"Меню"} collapsed={true}/>*/}
+
+            <Akord titleValue={"Меню"} collapsed={acordCollapsed}/>
+
             {/*<Akord titleValue={"User"} collapsed={false}/>*/}
 
             {/*<Rating value={1}/>*/}
