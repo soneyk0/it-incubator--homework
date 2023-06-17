@@ -5,9 +5,9 @@ import {Rating, RatingValueType} from './components/Rating/Rating'
 import OnOff from "./components/OnOff/OnOff";
 import PropTypes from "prop-types";
 import {isBooleanObject} from "util/types";
-import onOff from "./components/OnOff/OnOff";
 import UncontrolAkord from "./components/UncontrolAkord/UncontrolAccordion";
 import {UncontrolRating} from "./components/UncontrolRating/Rating";
+import UncontrolOnOff from "./components/UncontrolOnOff/OnOff";
 //function declaration
 
 function hello() {
@@ -21,12 +21,17 @@ function App() {
 
     let [ratingValue, setRatingValue]=useState<RatingValueType>(0)
     let [acordCollapsed, setAcordCollapsed]=useState<boolean>(false)
+
+    let [onOffValur, setOnOffValue]=useState<boolean>(true)
     return (
         // обязана вернуть JSX
         <div className={'App'}>
-            <OnOff/>
+            {/*<OnOff on={onOffValur} */}
+            {/*       onChange={(on)=>{setOnOffValue(!onOffValur)}}/>*/}
 
-            <UncontrolAkord titleValue={"Меню"}/>
+            <UncontrolOnOff onChange={setOnOffValue}/>{onOffValur.toString()}
+
+            <UncontrolAkord titleValue={'Blabla'}/>
             <UncontrolRating/>
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
@@ -34,7 +39,11 @@ function App() {
             {/*<OnOff on={true}/>*/}
             {/*<OnOff on={false}/>*/}
 
-            <Akord titleValue={"Меню"} collapsed={acordCollapsed}/>
+            <Akord titleValue={'Menu'}
+                   collapsed={acordCollapsed}
+                   onChange={()=>{setAcordCollapsed(!acordCollapsed)}}/>
+
+
 
             {/*<Akord titleValue={"User"} collapsed={false}/>*/}
 
