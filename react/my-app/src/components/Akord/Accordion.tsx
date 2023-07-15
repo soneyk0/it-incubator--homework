@@ -1,10 +1,17 @@
 import React from "react";
 import exp from "constants";
 
+type ItemType={
+    title:string
+    value:any
+}
+
 type AkordPropsType = {
     titleValue: string
     collapsed: boolean
     onChange: () => void
+    items: Array<ItemType>
+    onClick:(value:any)=>void
 }
 
 function Akord(props: AkordPropsType) {
@@ -15,7 +22,7 @@ function Akord(props: AkordPropsType) {
         <div>
             <AccordionTitle title={props.titleValue}
                             onChange={props.onChange}/>
-            {!props.collapsed && <AccordionBody/>}
+            {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
         </div>)
 
 }
@@ -32,16 +39,18 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     return <h3 onClick={props.onChange}>--- {props.title} ---</h3>
 }
 
-function AccordionBody() {
+type AkordBodyType = {
+    items: Array<ItemType>
+    onClick:(value:any)=>void
+}
+
+function AccordionBody(props: AkordBodyType) {
     console.log('AccordionBody rendered')
-    return (<>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </>
-    )
+    return <ul>
+        {props.items.map((i,index)=> <li onClick={()=>{props.onClick(i.value)}} key={index}>{i.title}</li>)}
+    </ul>
+
+
 }
 
 export default Akord;

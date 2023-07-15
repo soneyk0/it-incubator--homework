@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {KeyboardEvent, useState} from 'react';
 import './App.css';
 import Akord from "./components/Akord/Accordion";
 import {Rating, RatingValueType} from './components/Rating/Rating'
@@ -16,6 +16,7 @@ import {
 import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
+import {Select} from "./components/Select/Select";
 
 //function declaration
 
@@ -31,7 +32,12 @@ function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     let [acordCollapsed, setAcordCollapsed] = useState<boolean>(false)
 
+
     let [onOffValur, setOnOffValue] = useState<boolean>(true)
+
+    let [value,setValue]=useState(1)
+
+
     return (
         // обязана вернуть JSX
         <div className={'App'}>
@@ -52,7 +58,9 @@ function App() {
                    collapsed={acordCollapsed}
                    onChange={() => {
                        setAcordCollapsed(!acordCollapsed)
-                   }}/>
+                   }}
+                   items={[{title:'Yana',value:1}, {title:'Katy',value:2}, {title:'Anna',value:3}, {title:'Sasha',value:4}]}
+                   onClick={(value)=>{alert(value)}}/>
 
 
             <UncontrolledInput/>
@@ -61,6 +69,13 @@ function App() {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>
+            <Select
+                value={value}
+                onChange={(value:any)=>{setValue(value)}}
+                item={[
+                    {value:1,title:'Minsk'},
+                    {value:2,title:'Moscow'},
+                    {value:3,title:'Kiev'}]}/>
             {/*<Akord titleValue={"User"} collapsed={false}/>*/}
 
             {/*<Rating value={1}/>*/}
