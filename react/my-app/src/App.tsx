@@ -17,6 +17,7 @@ import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
 import {Select} from "./components/Select/Select";
+import {Example1} from "./ReactMemo";
 
 //function declaration
 
@@ -75,7 +76,10 @@ function App() {
                 item={[
                     {value:1,title:'Minsk'},
                     {value:2,title:'Moscow'},
-                    {value:3,title:'Kiev'}]}/>
+                    {value:3,title:'Kiev'}]}/> <hr/>
+
+
+            <Example1/>
             {/*<Akord titleValue={"User"} collapsed={false}/>*/}
 
             {/*<Rating value={1}/>*/}
