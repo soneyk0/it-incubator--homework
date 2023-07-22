@@ -17,7 +17,10 @@ import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledInput/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledInput/ControlledSelect";
 import {Select} from "./components/Select/Select";
-import {Example1} from "./ReactMemo";
+import {Example1} from "./components/Memo/ReactMemo";
+import {UseMemoDifficultCount} from "./components/Memo/UseMemo";
+import {HelpsToReactMemo} from "./components/Memo/UseMemo2";
+import {LikeUseCallBack} from "./components/UseCallBack/LikeUseCallBack";
 
 //function declaration
 
@@ -80,6 +83,13 @@ function App() {
 
 
             <Example1/>
+            <hr/>
+            <hr/>
+            <UseMemoDifficultCount/>
+            <hr/>
+            <HelpsToReactMemo/>
+            <hr/>
+            <LikeUseCallBack/>
             {/*<Akord titleValue={"User"} collapsed={false}/>*/}
 
             {/*<Rating value={1}/>*/}
