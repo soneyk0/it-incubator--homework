@@ -22,6 +22,7 @@ import {UseMemoDifficultCount} from "./components/Memo/UseMemo";
 import {HelpsToReactMemo} from "./components/Memo/UseMemo2";
 import {LikeUseCallBack} from "./components/UseCallBack/LikeUseCallBack";
 import {UseState} from "./components/UseState/UseState";
+import {UseEffectExample} from "./components/UseEffect/UseEffect";
 
 //function declaration
 
@@ -88,6 +89,8 @@ function App() {
             <LikeUseCallBack/>
             <hr/>
             <UseState/>
+            <hr/>
+            <UseEffectExample/>
 
         </div>
     );
