@@ -2,9 +2,6 @@ import React, {KeyboardEvent, useState} from 'react';
 import './App.css';
 import Akord from "./components/Akord/Accordion";
 import {Rating, RatingValueType} from './components/Rating/Rating'
-import OnOff from "./components/OnOff/OnOff";
-import PropTypes from "prop-types";
-import {isBooleanObject} from "util/types";
 import UncontrolAkord from "./components/UncontrolAkord/UncontrolAccordion";
 import {UncontrolRating} from "./components/UncontrolRating/Rating";
 import UncontrolOnOff from "./components/UncontrolOnOff/OnOff";
@@ -22,7 +19,7 @@ import {UseMemoDifficultCount} from "./components/Memo/UseMemo";
 import {HelpsToReactMemo} from "./components/Memo/UseMemo2";
 import {LikeUseCallBack} from "./components/UseCallBack/LikeUseCallBack";
 import {UseState} from "./components/UseState/UseState";
-import {UseEffectExample} from "./components/UseEffect/UseEffect";
+import {UseEffectSetTimeoutExample, UseEffectTitleExample} from "./components/UseEffect/UseEffect";
 
 //function declaration
 
@@ -90,7 +87,9 @@ function App() {
             <hr/>
             <UseState/>
             <hr/>
-            <UseEffectExample/>
+            <UseEffectTitleExample/>
+            <hr/>
+            <UseEffectSetTimeoutExample/>
 
         </div>
     );
