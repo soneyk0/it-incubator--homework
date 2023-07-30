@@ -21,6 +21,7 @@ import {Example1} from "./components/Memo/ReactMemo";
 import {UseMemoDifficultCount} from "./components/Memo/UseMemo";
 import {HelpsToReactMemo} from "./components/Memo/UseMemo2";
 import {LikeUseCallBack} from "./components/UseCallBack/LikeUseCallBack";
+import {UseState} from "./components/UseState/UseState";
 
 //function declaration
 
@@ -45,8 +46,6 @@ function App() {
     return (
         // обязана вернуть JSX
         <div className={'App'}>
-            {/*<OnOff on={onOffValur} */}
-            {/*       onChange={(on)=>{setOnOffValue(!onOffValur)}}/>*/}
 
             <UncontrolOnOff onChange={setOnOffValue}/>{onOffValur.toString()}
 
@@ -54,9 +53,6 @@ function App() {
             <UncontrolRating/>
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
-
-            {/*<OnOff on={true}/>*/}
-            {/*<OnOff on={false}/>*/}
 
             <Akord titleValue={'Menu'}
                    collapsed={acordCollapsed}
@@ -90,14 +86,9 @@ function App() {
             <HelpsToReactMemo/>
             <hr/>
             <LikeUseCallBack/>
+            <hr/>
+            <UseState/>
 
-            {/*<Akord titleValue={"User"} collapsed={false}/>*/}
-
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
         </div>
     );
 }
