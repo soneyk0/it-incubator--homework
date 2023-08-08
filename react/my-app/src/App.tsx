@@ -20,6 +20,7 @@ import {HelpsToReactMemo} from "./components/Memo/UseMemo2";
 import {LikeUseCallBack} from "./components/UseCallBack/LikeUseCallBack";
 import {UseState} from "./components/UseState/UseState";
 import {UseEffectSetTimeoutExample, UseEffectTitleExample} from "./components/UseEffect/UseEffect";
+import {Clock} from "./components/UseEffect/Clock";
 
 //function declaration
 
@@ -89,7 +90,9 @@ function App() {
             <hr/>
             <UseEffectTitleExample/>
             <hr/>
-            <UseEffectSetTimeoutExample/>
+            {/*<UseEffectSetTimeoutExample/>*/}
+            <hr/>
+            <Clock/>
 
         </div>
     );
